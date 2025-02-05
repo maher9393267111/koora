@@ -4,10 +4,11 @@ import Image from 'next/image';
 const fetchMatch = async (matchId) => {
   try {
     const baseUrl = process.env.NODE_ENV === 'production' ? "https://koora-rouge.vercel.app" : 'http://localhost:3000';
-    const response = await fetch(`${baseUrl}/api/matches/${matchId}`, {
+    const response = await fetch(`https://koora-rouge.vercel.app/api/matches/${matchId}`, {
       cache: 'no-store' // Disable cache to ensure fresh data
     });
     
+
     if (!response.ok) {
       const errorText = await response.text();
       console.error('Fetch error:', {

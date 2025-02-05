@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const fetchMatches = async () => {
     const baseUrl = process.env.NODE_ENV === 'production' ? "https://koora-rouge.vercel.app" : 'http://localhost:3000';
-    const response = await fetch(`${baseUrl}/api/matches`, {
+    const response = await fetch(`https://koora-rouge.vercel.app/api/matches`, {
         cache: 'no-store', // Ensure fresh data on each request
     });
 
