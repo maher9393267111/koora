@@ -5,9 +5,11 @@ import Link from 'next/link';
 const AdsComponent = dynamic(() => import('../components/AdsComponent'), { ssr: false });
 
 const fetchMatches = async () => {
-    const response = await fetch('http://localhost:3000/api/matches', {
+    const baseUrl = process.env.NODE_ENV === 'production' ? "https://koora-rouge.vercel.app" : 'http://localhost:3000';
+    const response = await fetch(`${baseUrl}/api/matches`, {
         cache: 'no-store',
     });
+
     if (!response.ok) {
         throw new Error('Failed to fetch matches');
     }
