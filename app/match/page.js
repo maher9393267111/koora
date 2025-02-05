@@ -4,9 +4,11 @@ import React from 'react';
 import Link from 'next/link';
 
 const fetchMatches = async () => {
-    const response = await fetch('https://kooranext.vercel.app/api/matches', {
+    const baseUrl = process.env.NODE_ENV === 'production' ? "https://koora-rouge.vercel.app" : 'http://localhost:3000';
+    const response = await fetch(`${baseUrl}/api/matches`, {
         cache: 'no-store', // Ensure fresh data on each request
     });
+
     if (!response.ok) {
         throw new Error('Failed to fetch matches');
     }

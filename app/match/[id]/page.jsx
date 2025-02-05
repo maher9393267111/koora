@@ -3,7 +3,8 @@ import Image from 'next/image';
 
 const fetchMatch = async (matchId) => {
   try {
-    const response = await fetch(`http://localhost:3000/api/matches/${matchId}`, {
+    const baseUrl = process.env.NODE_ENV === 'production' ? "https://koora-rouge.vercel.app" : 'http://localhost:3000';
+    const response = await fetch(`${baseUrl}/api/matches/${matchId}`, {
       cache: 'no-store' // Disable cache to ensure fresh data
     });
     

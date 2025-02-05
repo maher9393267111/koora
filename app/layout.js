@@ -12,16 +12,18 @@ export const metadata = {
   openGraph: {
     title: "Koora Live Matches - بث مباشر للمباريات",
     description: "Watch live football matches with Koora. بث مباشر لأحدث المباريات وتحليل النتائج.",
-    url: "https://kooranext.com",
+    url: "https://koora-rouge.vercel.app",
     siteName: "KooraNext",
+
     images: [
       {
-        url: "https://kooranext.com/og-image.jpg", 
+        url: "https://koora-rouge.vercel.app/og-image.jpg", 
         width: 1200,
         height: 630,
         alt: "Koora live matches",
       },
     ],
+
     locale: "en_US",
     type: "website",
   },
